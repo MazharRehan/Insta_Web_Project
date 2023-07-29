@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Geneva, Verdana, sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+    height: 100vh;
+    width: 100vw;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    height: 100%;
+    width: 15%;
+    background-color: #ffffff;
+    border-right: 1px solid #dbdbdb;
+    position: fixed;
+    padding-bottom: 20px;
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-top: 8px;
+}
+
+.sidebar-insta-logo {
+    width: 100%;
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 16px;
+    width: 70%;
+}
+
+.sidebar-icon {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 25px;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 12px;
+    padding-bottom: 3px;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.sidebar-profile {
+    display: flex;
+    margin-left: -9px;
+}
+
+.sidebar-icon-profile {
+    margin-right: 7px;
+    width: 45px;
+    height: 45px;
+    vertical-align: middle;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid black;
+    display: flex;
+    /* set border radius outside of image */
+}
+
+.sidebar-icon-profile img {
+    width: 43px;
+    height: 43px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sidebar-icon-profile-name {
+    display: flex;
+    vertical-align: center;
+    margin-top: 8px;
+    margin-left: 9px;
+}
+
+.sidebar a:hover {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+
+.sidebar-more {
+    margin-top: auto;
+    margin-bottom: 10px;
+    position: relative; 
+    display: inline-block;
+}
+
+.sidebar-more-btn {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    padding: 12px;
+    font-size: 18px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.sidebar-more-btn:hover {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+.sidebar-more-options {
+    position: absolute;
+    top: calc(-650% + 60px);
+    left: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s; 
+    z-index: 1;
+    width: 255px;
+}
+
+.sidebar-more-options-body {
+    padding: 10px;
+}
+
+.sidebar-more-options-body-option {
+    margin-bottom: 10px;
+}
+
+.sidebar-more-options-body-option a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar-more-options-body-option a:hover {
+    background-color: #e3e3e3;
+}
+
+.sidebar-more-icon {
+    margin-right: 10px;
+    width: 25px;
+    vertical-align: middle;
+}
+
+/*  when user click on more button then change the sidebar-more-options to visible and opacity to 1 */
+.sidebar-more-options {
+    opacity: 1;
+    visibility: visible;
+}

@@ -1,0 +1,140 @@
+/* *{
+    // max-width: 100%; 
+} 
+*/
+
+body {
+    background-color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.profile_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    height: 100%;
+    width: 100%;
+    margin-left: 15%;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.profile_centent {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: left;
+    height: 100%;
+    width: 70%;
+    align-self: center;
+    padding: 20px;
+}
+
+.profile_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: left;
+    width: 100%;
+    align-self: center;
+    margin-bottom: 65px;
+}
+
+.profile_image {
+    width: 165px;
+    height: 165px;
+    margin-left: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user_profile_info {
+    margin-left: 80px;
+    align-items: stretch;
+    flex-direction: row;
+    position: relative;
+}
+
+.user_profile_name {
+    display: flex;
+    margin-top: 10px;
+}
+
+.user_profile_name h1 {
+    font-size: 27px;
+    font-weight: 300;
+    margin-right: 40px;
+}
+
+.user_profile_name a {
+    /* bkcolor dull */
+    background-color: #f2f1f1;
+    justify-content: center;
+    border-radius: 9px;
+    padding: 7px 24px;
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.user_profile_details {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: left;
+    width: 100%;
+    align-self: center;
+    padding: 20px;
+}
+
+.user_profile_details li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: left;
+    width: 100%;
+    align-self: center;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.user_profile_bio {
+    align-items: left;
+    width: 100%;
+}
+
+.user_profile_bio h3 {
+    line-height: 18px;
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 22px;
+    /* align text left */
+    /* text-align: left; */
+}
+
+.user_profile_bio p {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+.post_headline {
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    background-color: #6658fe;
+    color: white;
+    font-weight: bold;
+}

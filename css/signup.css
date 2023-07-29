@@ -1,0 +1,138 @@
+body {
+    background-color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.signupSection {
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 2%;
+    text-align: center;
+    border: 1px solid #dbdbdb;
+    padding: 10px;
+    margin-bottom: 1.5%;
+    padding-bottom: 3%;
+}
+
+.signup-tagline {
+    color: #8e8e8e;
+    margin-top: 0;
+}
+
+.signupSection img {
+    width: 80%;
+    margin-bottom: 0;
+}
+
+.signup-form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.user-input {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 5%;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background-color: #fafafa;
+    height: 30px;
+    font-size: 18px;
+}
+
+.user-input::placeholder {
+    font-size: 15px;
+}
+
+.signup-btn,
+.login-btn {
+    width: 84%;
+    padding: 5px;
+    margin-bottom: 5%;
+    border-radius: 7px;
+    border: none;
+    background-color: #2ea9fb;
+    color: #fff;
+    font-weight: bold;
+    height: 40px;
+}
+
+.signup-btn:hover {
+    background-color: #0095f6;
+    color: #fff;
+    font-weight: bold;
+}
+
+.terms-conditions {
+    color: #8e8e8e;
+}
+
+.terms-conditions a {
+    color: #0095f6;
+    text-decoration: none;
+}
+
+.terms-conditions a:hover {
+    color: #0095f6;
+    font-weight: bold;
+}
+
+.terms-conditions a:active {
+    color: #0095f6;
+    font-weight: bold;
+}
+
+.loginSection {
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #dbdbdb;
+    padding: 10px;
+}
+
+.loginSection p {
+    margin-bottom: 5%;
+}
+
+.loginSection p a {
+    color: #0095f6;
+    text-decoration: none;
+}
+
+.loginSection p a:hover {
+    color: #0095f6;
+    font-weight: bold;
+}
+
+.loginSection p a:active {
+    color: #0095f6;
+    font-weight: bold;
+}
+
+.hr-left {
+    display: inline-block;
+    width: 35%;
+    /* Adjust the width of the line on the left side */
+    height: 1px;
+    border: none;
+    border-top: 2px solid #8e8e8e;
+}
+
+.hr-right {
+    display: inline-block;
+    width: 35%;
+    /* Adjust the width of the line on the right side */
+    height: 1px;
+    border: none;
+    border-top: 2px solid #8e8e8e;
+}
+
+.or-text {
+    display: inline-block;
+    width: 5%;
+    margin: 9px;
+    margin-bottom: 12px;
+    color: #8e8e8e;
+    font-weight: bold;
+}
