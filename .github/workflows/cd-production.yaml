@@ -14,9 +14,9 @@ jobs:
         with:
           ref: ${{ github.ref }}
 
-      - name: Build Website for Production
-        run: |
-          npx parcel build ".index.php" --dist-dir "./dist" --public-url "./"
+      # - name: Build Website for Production
+      #   run: |
+      #     npx parcel build ".index.php" --dist-dir "./dist" --public-url "./"
 
       - name: Upload Build Artifacts
         uses: actions/upload-pages-artifact@v3
