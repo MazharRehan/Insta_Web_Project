@@ -9,15 +9,26 @@ jobs:
   ci-development-job:
     name: Run CI Checks for Development Branch
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Lint HTML and CSS Files
+      - name: Lint CSS Files
         run: |
-          npx htmlhint "**/*.html"
           npx stylelint "**/*.css"
+
+      - name: Setup PHP with PECL extension
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+
+      - name: Install PHP_CodeSniffer
+        run: composer global require "squizlabs/php_codesniffer=*"
+
+      - name: Lint PHP Files
+        run: ~/.composer/vendor/bin/phpcs --standard=PSR12 **/*.php
 
       - name: Build Project for Development Testing
         run: |
-          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
+          npx parcel build "./src/index.php" --dist-dir "./dist" --public-url "./"
