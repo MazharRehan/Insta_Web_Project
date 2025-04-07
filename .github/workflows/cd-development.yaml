@@ -27,7 +27,7 @@ jobs:
           zip -r project.zip . -x "*.git*"
 
       - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-pages-artifact@v3
         with:
           name: insta-web-project
           path: project.zip
