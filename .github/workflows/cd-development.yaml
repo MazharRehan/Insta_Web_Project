@@ -13,9 +13,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # - name: Build Website for Development Environment
-      #   run: |
-      #     npx parcel build ".index.php" --dist-dir "./dist" --public-url "./"
+      - name: Build Website for Development Environment
+        run: |
+          npx parcel build ".index.php" --dist-dir "./dist" --public-url "./"
 
       - name: Upload Build Artifacts for Deployment
         uses: actions/upload-pages-artifact@v3

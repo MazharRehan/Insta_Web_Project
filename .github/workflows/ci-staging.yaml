@@ -30,6 +30,6 @@ jobs:
       - name: Lint PHP Files
         run: ~/.composer/vendor/bin/phpcs --standard=PSR12 **/*.php
 
-      # - name: Test Build in Staging
-      #   run: |
-      #     npx parcel build ".index.php" --dist-dir "./dist" --public-url "./"
+      - name: Test Build in Staging
+        run: |
+          npx parcel build ".index.php" --dist-dir "./dist" --public-url "./"
