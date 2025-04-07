@@ -1,6 +1,5 @@
 {
     "rules": {
-        "declaration-block-no-duplicate-properties": true,
         "property-no-unknown": true,
         "value-keyword-case": "lower",
         "selector-type-case": "lower"
