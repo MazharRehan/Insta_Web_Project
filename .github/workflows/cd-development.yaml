@@ -13,27 +13,21 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Build Website for Development Environment
+      - name: Lint CSS Files
         run: |
-          npx parcel build ".index.php" --dist-dir "./dist" --public-url "./"
+          npm install stylelint stylelint-config-standard --save-dev
+          npx stylelint "**/*.css"
 
-      - name: Upload Build Artifacts for Deployment
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "./dist"
-          name: "build-artifact-development"
+      - name: Check PHP Syntax
+        run: |
+          find . -name "*.php" -type f -print0 | xargs -0 -n1 php -l
 
-  deploy-development-job:
-    name: Deploy to Development Environment
-    needs: build-development-job
-    environment: development-env
-    permissions:
-      pages: write
-      id-token: write
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy Development Build to GitHub Pages
-        uses: actions/deploy-pages@v4
+      - name: Create Project Archive
+        run: |
+          zip -r project.zip . -x "*.git*"
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v3
         with:
-          artifact_name: "build-artifact-development"
-          token: ${{ github.token }}
+          name: insta-web-project
+          path: project.zip
