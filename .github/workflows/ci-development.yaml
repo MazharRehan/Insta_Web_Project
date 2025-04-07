@@ -1,0 +1,23 @@
+name: CI Pipeline - Development Branch
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  ci-development-job:
+    name: Run CI Checks for Development Branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Lint HTML and CSS Files
+        run: |
+          npx htmlhint "**/*.html"
+          npx stylelint "**/*.css"
+
+      - name: Build Project for Development Testing
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"

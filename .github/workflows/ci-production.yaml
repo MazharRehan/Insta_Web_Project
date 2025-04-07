@@ -1,0 +1,27 @@
+name: wf-ci-production
+
+on:
+  pull_request:
+    branches:
+      - "production"
+
+jobs:
+  ci-production-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }} # Fixing issues
+
+      #- name: Install Dependencies
+      #  run: npm ci
+
+      - name: Lint HTML and CSS
+        run: |
+          npx htmlhint "**/*.html"
+          npx stylelint "**/*.css"
+
+      - name: Test Build in Production
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"

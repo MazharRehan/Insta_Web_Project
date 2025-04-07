@@ -1,0 +1,44 @@
+name: CD Pipeline - Development Branch
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build-development-job:
+    name: Build Development Artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Uncomment this step if you need to install dependencies
+      # - name: Install Project Dependencies
+      #   run: |
+      #     npm install
+
+      - name: Build Website for Development Environment
+        run: |
+          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
+
+      - name: Upload Build Artifacts for Deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./dist"
+          name: "build-artifact-development"
+
+  deploy-development-job:
+    name: Deploy to Development Environment
+    needs: build-development-job
+    environment: development-env
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Development Build to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: "build-artifact-development"
+          token: ${{ github.token }}
