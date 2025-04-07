@@ -32,4 +32,4 @@ jobs:
 
       - name: Test Build in Staging
         run: |
-          npx parcel build "./src/index.php" --dist-dir "./dist" --public-url "./"
+          npx parcel build ".index.php" --dist-dir "./dist" --public-url "./"

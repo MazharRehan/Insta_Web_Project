@@ -15,12 +15,9 @@ jobs:
         with:
           ref: ${{ github.ref }}
 
-      # - name: InstallDependencies
-      #   run: npm install
-
       - name: Build Website for Staging
         run: |
-          npx parcel build "./src/index.php" --dist-dir "./dist" --public-url "./"
+          npx parcel build ".index.php" --dist-dir "./dist" --public-url "./"
 
       - name: Upload Build Artifacts
         uses: actions/upload-pages-artifact@v3

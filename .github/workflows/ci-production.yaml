@@ -14,9 +14,6 @@ jobs:
         with:
           ref: ${{ github.ref }} # Fixing issues
 
-      #- name: Install Dependencies
-      #  run: npm ci
-
       - name: Lint HTML and CSS
         run: |
           npx htmlhint "**/*.p"
@@ -24,4 +21,4 @@ jobs:
 
       - name: Test Build in Production
         run: |
-          npx parcel build "./src/index.php" --dist-dir "./dist" --public-url "./"
+          npx parcel build ".index.php" --dist-dir "./dist" --public-url "./"
