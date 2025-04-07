@@ -13,14 +13,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.ref }}
-          #fetch-depth: 1 # Fetch only the latest commit, By Default it's 1
-
-      #- name: Install Dependencies
-      #  run: npm install
 
       - name: Build Website for Production
         run: |
-          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
+          npx parcel build "./src/index.php" --dist-dir "./dist" --public-url "./"
 
       - name: Upload Build Artifacts
         uses: actions/upload-pages-artifact@v3

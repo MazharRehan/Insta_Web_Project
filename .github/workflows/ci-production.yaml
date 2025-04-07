@@ -19,9 +19,9 @@ jobs:
 
       - name: Lint HTML and CSS
         run: |
-          npx htmlhint "**/*.html"
+          npx htmlhint "**/*.p"
           npx stylelint "**/*.css"
 
       - name: Test Build in Production
         run: |
-          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
+          npx parcel build "./src/index.php" --dist-dir "./dist" --public-url "./"

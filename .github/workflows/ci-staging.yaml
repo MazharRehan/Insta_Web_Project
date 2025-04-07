@@ -15,14 +15,21 @@ jobs:
         with:
           ref: ${{ github.ref }}
 
-      # - name: Install Dependencies
-      #   run: npm ci
-
-      - name: Lint HTML and CSS
+      - name: Lint CSS
         run: |
-          npx htmlhint "**/*.html"
           npx stylelint "**/*.css"
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+
+      - name: Install PHP_CodeSniffer
+        run: composer global require "squizlabs/php_codesniffer=*"
+
+      - name: Lint PHP Files
+        run: ~/.composer/vendor/bin/phpcs --standard=PSR12 **/*.php
 
       - name: Test Build in Staging
         run: |
-          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
+          npx parcel build "./src/index.php" --dist-dir "./dist" --public-url "./"
